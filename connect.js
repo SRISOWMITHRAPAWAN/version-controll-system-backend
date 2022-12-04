@@ -6,7 +6,7 @@ module.exports ={
         try{
           const client = await MongoClient.connect(process.env.MONGODB_URL)
           this.selecteddb= client.db("useAuth")
-    //   console.log(this.selecteddb)
+      console.log(this.selecteddb)
         } catch(err){
             console.log(err);
         }
