@@ -11,7 +11,10 @@ dotenv.config();
 mongo.connect();
 
 const app=express();
-app.use(cors());
+app.use(cors({
+    origin:"*"
+}
+));
 app.use(express.json());
 
 app.use("/register",registerRouter);
@@ -22,4 +25,4 @@ app.use("/employees",employeeRouter);
 
 
 
-app.listen(process.env.PORT)
+app.listen(process.env.PORT ||3001)
